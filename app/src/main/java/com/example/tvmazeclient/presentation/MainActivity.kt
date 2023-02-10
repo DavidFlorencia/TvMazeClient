@@ -1,14 +1,28 @@
-package com.example.tvmazeclient
+package com.example.tvmazeclient.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.widget.SearchView
+import androidx.lifecycle.ViewModelProvider
+import com.example.tvmazeclient.R
+import com.example.tvmazeclient.databinding.ActivityMainBinding
+import com.example.tvmazeclient.presentation.viewmodel.LandingViewModel
+import com.example.tvmazeclient.presentation.viewmodel.LandingViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+    @Inject
+    lateinit var factory: LandingViewModelFactory
+    lateinit var viewModel: LandingViewModel
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        viewModel = ViewModelProvider(this,factory).get(LandingViewModel::class.java)
+        setContentView(binding.root)
     }
 
     /**

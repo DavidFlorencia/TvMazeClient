@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -13,13 +15,14 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
-
+        buildConfigField("String","BASE_URL",API_PATH)
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -62,9 +65,22 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
     /**
-     * depenedncias para consumo de servicios web
+     * dependencia para consumo de servicios web
      */
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
-    //TODO "Eliminar esta dependencia, solo es de prueba"
-    implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+    /**
+     * dependencia para parseo de respuesta de servicios web
+     */
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    /**
+     * dependencia para inyeccion de dependencias
+     */
+    implementation("com.google.dagger:hilt-android:$hiltVersion")
+    kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
+
+    /**
+     * dependencia para agregar interceptor a retrofit
+     */
+    implementation "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVersion"
 }

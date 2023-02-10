@@ -1,17 +1,17 @@
-package com.example.tvmazeclient.view
+package com.example.tvmazeclient.presentation.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import com.example.tvmazeclient.viewmodel.LandingViewModel
+import com.example.tvmazeclient.presentation.viewmodel.LandingViewModel
 import com.example.tvmazeclient.databinding.FragmentLandingBinding
+import com.example.tvmazeclient.presentation.MainActivity
 
 class LandingFragment : Fragment() {
     private lateinit var binding: FragmentLandingBinding
-    private val viewModel: LandingViewModel by viewModels()
+    private lateinit var viewModel: LandingViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,6 +20,12 @@ class LandingFragment : Fragment() {
         binding = FragmentLandingBinding.inflate(inflater, container, false).apply {
             lifecycleOwner = this@LandingFragment
         }
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel = (activity as MainActivity).viewModel
 
         /**
          * observador que se detona al iniciar este fragment
@@ -27,7 +33,7 @@ class LandingFragment : Fragment() {
          * del día
          */
         viewModel.dateIso8601.observe(viewLifecycleOwner) { date ->
-            viewModel.getTvMazeSchedule(date)
+            viewModel.getShowsSchedule(date)
         }
 
         /**
@@ -35,11 +41,9 @@ class LandingFragment : Fragment() {
          * servicio web de programación del día, muestra la respuesta
          * del consumo en texto plano
          */
-        viewModel.response.observe(viewLifecycleOwner){ value ->
-            binding.txtTest.text = value
+        viewModel.currentShows.observe(viewLifecycleOwner){ value ->
+            binding.txtTest.text = value.data?.size.toString()
         }
-
-        return binding.root
     }
 
     override fun onResume() {
