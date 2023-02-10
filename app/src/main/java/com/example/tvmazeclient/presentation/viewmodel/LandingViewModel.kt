@@ -6,7 +6,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import androidx.lifecycle.*
-import com.example.tvmazeclient.data.model.ApiResponse
+import com.example.tvmazeclient.data.model.ScheduleResponse
 import com.example.tvmazeclient.data.util.Resource
 import com.example.tvmazeclient.domain.usecase.GetShowsScheduleUseCase
 import kotlinx.coroutines.launch
@@ -47,8 +47,8 @@ class LandingViewModel(
     /**
      * liva data que contiene lista de shows
      */
-    private val _currentShows = MutableLiveData<Resource<ApiResponse>>()
-    val currentShows: LiveData<Resource<ApiResponse>>
+    private val _currentShows = MutableLiveData<Resource<ScheduleResponse>>()
+    val currentShows: LiveData<Resource<ScheduleResponse>>
         get() = _currentShows
 
     /**

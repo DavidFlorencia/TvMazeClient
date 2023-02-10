@@ -5,13 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.tvmazeclient.data.util.Resource
 import com.example.tvmazeclient.presentation.viewmodel.LandingViewModel
 import com.example.tvmazeclient.databinding.FragmentLandingBinding
 import com.example.tvmazeclient.presentation.MainActivity
+import com.example.tvmazeclient.presentation.adapter.ShowsAdapter
 
 class LandingFragment : Fragment() {
     private lateinit var binding: FragmentLandingBinding
     private lateinit var viewModel: LandingViewModel
+    private lateinit var showsAdapter: ShowsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,7 +46,28 @@ class LandingFragment : Fragment() {
          * del consumo en texto plano
          */
         viewModel.currentShows.observe(viewLifecycleOwner){ value ->
-            binding.txtTest.text = value.data?.size.toString()
+            when(value){
+                is Resource.Success -> {
+                    showsAdapter.differ.submitList(value.data)
+                }
+                is Resource.Error -> {
+
+                }
+                is Resource.Loading -> {
+
+                }
+            }
+            // adapter!
+        }
+
+        initRecyclerView()
+    }
+
+    private fun initRecyclerView() {
+        showsAdapter = ShowsAdapter()
+        binding.rvShows.apply {
+            adapter = showsAdapter
+            layoutManager = LinearLayoutManager(activity)
         }
     }
 

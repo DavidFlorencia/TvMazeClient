@@ -2,14 +2,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".presentation.view.LandingFragment">
-<!--    <androidx.recyclerview.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_shows"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </androidx.recyclerview.widget.RecyclerView>
--->
-    <TextView
-        android:id="@+id/txtTest"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_show"
+        android:background="@color/gray"/>
 </layout>

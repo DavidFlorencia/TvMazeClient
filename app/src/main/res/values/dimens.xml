@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_between_picture">5dp</dimen>
+    <dimen name="margin_between_image_text">10dp</dimen>
+    <dimen name="margin_between_network_air">5dp</dimen>
+
+    <dimen name="item_list_title_size">16sp</dimen>
+    <dimen name="item_list_secondary_size">14sp</dimen>
+</resources>

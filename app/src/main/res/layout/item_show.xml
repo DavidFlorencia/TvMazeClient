@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margin_between_picture"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_marginVertical="@dimen/margin_between_picture"
+            android:id="@+id/ivShowImage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            tools:src="@tools:sample/avatars"
+            android:contentDescription="@string/content_description_portrait"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/margin_between_image_text"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/item_list_title_size"
+                tools:text="Name" />
+
+            <TextView
+                android:id="@+id/txt_network_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/item_list_secondary_size"
+                tools:text="Network Name"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/margin_between_network_air"
+                android:id="@+id/txt_air_date_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/item_list_secondary_size"
+                tools:text="Air Date | Air Time"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
+
