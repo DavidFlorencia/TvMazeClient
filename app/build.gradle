@@ -60,4 +60,11 @@ dependencies {
      */
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    /**
+     * depenedncias para consumo de servicios web
+     */
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    //TODO "Eliminar esta dependencia, solo es de prueba"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
 }

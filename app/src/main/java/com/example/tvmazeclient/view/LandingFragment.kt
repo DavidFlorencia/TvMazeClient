@@ -21,6 +21,24 @@ class LandingFragment : Fragment() {
             lifecycleOwner = this@LandingFragment
         }
 
+        /**
+         * observador que se detona al iniciar este fragment
+         * da inicio al proceso de consumo de la programación
+         * del día
+         */
+        viewModel.dateIso8601.observe(viewLifecycleOwner) { date ->
+            viewModel.getTvMazeSchedule(date)
+        }
+
+        /**
+         * observador que se detona al finalizar el consumo del
+         * servicio web de programación del día, muestra la respuesta
+         * del consumo en texto plano
+         */
+        viewModel.response.observe(viewLifecycleOwner){ value ->
+            binding.txtTest.text = value
+        }
+
         return binding.root
     }
 
