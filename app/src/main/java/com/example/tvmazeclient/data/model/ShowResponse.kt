@@ -17,7 +17,7 @@ data class ShowResponse(
     @SerializedName("officialSite")
     val officialSite: String?,
     @SerializedName("summary")
-    val summary: String,
+    val summary: String?,
     @SerializedName("genres")
     val genres: List<String>,
     @SerializedName("schedule")

@@ -15,9 +15,11 @@
     <dimen name="status_size">200dp</dimen>
     <dimen name="status_size_detail">300dp</dimen>
     <dimen name="margin_vertical_detail_fragment">20dp</dimen>
+    <dimen name="margin_vertical_detail_fragment_text">10dp</dimen>
     <dimen name="margin_horizontal_detail_fragment">20dp</dimen>
     <dimen name="width_button">180dp</dimen>
     <dimen name="height_button">50dp</dimen>
     <dimen name="margin_horizontal_tablet_items">5dp</dimen>
+    <dimen name="item_cast_width">120dp</dimen>
     <bool name="portrait_only">true</bool>
 </resources>

@@ -1,8 +1,9 @@
 package com.example.tvmazeclient.presentation.view
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.Html
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,11 +16,13 @@ import com.bumptech.glide.Glide
 import com.example.tvmazeclient.R
 import com.example.tvmazeclient.data.util.Resource
 import com.example.tvmazeclient.databinding.FragmentDetailBinding
+import com.example.tvmazeclient.presentation.adapter.PersonAdapter
 import com.example.tvmazeclient.presentation.viewmodel.DetailViewModel
 import com.example.tvmazeclient.presentation.viewmodel.DetailViewModelFactory
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
@@ -70,12 +73,39 @@ class DetailFragment : Fragment() {
                         binding.tvName.text = show.name
                         binding.tvNetworkName.text = show.network?.name
                         binding.tvRating.text = "rating: ${show.rating.average ?: "-"}"
-                        binding.tvResume.text = Html.fromHtml(show.summary,
-                            Html.FROM_HTML_MODE_COMPACT)
+                        if (show.summary!=null){
+                            binding.tvResume.text = Html.fromHtml(show.summary,
+                                Html.FROM_HTML_MODE_COMPACT)
+                        }
+
                         binding.tvGenders.text = show.genres
-                            ?.joinToString(", ")
+                            .joinToString(", ")
                         val days = show.schedule.days.joinToString(", ")
                         binding.tvSchedule.text = "${show.schedule.time} | $days"
+
+                        show.officialSite
+                        show.network?.officialSite
+
+                        /**
+                         * validar que exista la información de la página a la que
+                         * se va a navegar
+                         */
+                        binding.btnGoSite.setOnClickListener {
+                            val url =
+                                show.officialSite
+                                    ?: (show.network?.officialSite ?: "")
+                            if (url.isNotEmpty()){
+                                val browse = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                                startActivity(browse)
+                            }else{
+                                Snackbar
+                                    .make(
+                                        binding.root,
+                                        "No data",
+                                        Snackbar.LENGTH_LONG)
+                                    .show()
+                            }
+                        }
                     }
                     hideProgressBar()
                 }
@@ -104,12 +134,12 @@ class DetailFragment : Fragment() {
         viewModel.cast.observe(viewLifecycleOwner){ response ->
             when(response){
                 is Resource.Success -> {
-                    Log.d("Prueba",response.data.toString())
+                    val adapter = PersonAdapter()
+                    binding.rvCast.adapter = adapter
+                    adapter.differ.submitList(response.data)
                 }
                 is Resource.Error -> {}
-                is Resource.Loading -> {
-//                    showProgressBar()
-                }
+                is Resource.Loading -> {}
             }
         }
     }
