@@ -6,6 +6,17 @@
 
     <dimen name="item_list_title_size">16sp</dimen>
     <dimen name="item_list_secondary_size">14sp</dimen>
+
+    <dimen name="detail_title_size">18sp</dimen>
+    <dimen name="detail_subtitle_size">16sp</dimen>
+    <dimen name="detail_body_size">14sp</dimen>
+    <dimen name="font_size_button">18sp</dimen>
+
     <dimen name="status_size">200dp</dimen>
+    <dimen name="margin_vertical_detail_fragment">20dp</dimen>
+    <dimen name="margin_horizontal_detail_fragment">20dp</dimen>
+    <dimen name="width_button">180dp</dimen>
+    <dimen name="height_button">50dp</dimen>
+    <dimen name="margin_horizontal_tablet_items">5dp</dimen>
     <bool name="portrait_only">true</bool>
 </resources>

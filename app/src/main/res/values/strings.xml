@@ -3,4 +3,10 @@
     <string name="search">Search</string>
     <string name="content_description_portrait">Portada del show</string>
     <string name="loader_network_error">Estado de carga o error</string>
+    <string name="show_portrait">Poster del show</string>
+    <string name="detail_resume">Sinópsis:</string>
+    <string name="detail_gender">Géneros:&#160;</string>
+    <string name="detail_schedule">Horario:&#160;</string>
+    <string name="detail_cast">Talentos:</string>
+    <string name="go_site">Visitar sitio</string>
 </resources>

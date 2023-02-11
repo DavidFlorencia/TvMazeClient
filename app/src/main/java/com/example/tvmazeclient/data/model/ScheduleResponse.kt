@@ -23,7 +23,7 @@ class ScheduleResponse : ArrayList<ScheduleResponse.Show>(){
         @SerializedName("name")
         val name: String,
         @SerializedName("image")
-        val image: Image,
+        val image: Image?,
         @SerializedName("network")
         val network: Network?,
     )

@@ -47,7 +47,9 @@ class QueryAdapter: RecyclerView.Adapter<QueryAdapter.QueryViewHolder>() {
 
                     binding.txtName.text = item.show.name
                     binding.txtNetworkName.text = item.show.network?.name
-                    binding.txtAirDateTime.text = "${item.show.schedule.time} | day"
+
+                    val days = item.show.schedule.days.joinToString(", ")
+                    binding.txtAirDateTime.text = "${item.show.schedule.time} | ${days}"
 
                     Glide.with(binding.ivShowImage.context)
                         .load(item.show.image?.medium)

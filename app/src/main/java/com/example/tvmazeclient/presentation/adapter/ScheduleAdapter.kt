@@ -50,7 +50,7 @@ class ScheduleAdapter: RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>(
                     binding.txtAirDateTime.text = "${show.airdate} | ${show.airtime}"
 
                     Glide.with(binding.ivShowImage.context)
-                        .load(show.showInfo.image.medium)
+                        .load(show.showInfo.image?.medium)
                         .into(binding.ivShowImage)
 
                     binding.root.setOnClickListener {

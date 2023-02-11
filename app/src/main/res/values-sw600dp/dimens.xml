@@ -2,5 +2,13 @@
 <resources>
     <dimen name="item_list_title_size">18sp</dimen>
     <dimen name="item_list_secondary_size">16sp</dimen>
+
+    <dimen name="detail_title_size">22sp</dimen>
+    <dimen name="detail_subtitle_size">20sp</dimen>
+    <dimen name="detail_body_size">18sp</dimen>
+    <dimen name="font_size_button">22sp</dimen>
+
     <bool name="portrait_only">false</bool>
+    <dimen name="width_button">200dp</dimen>
+    <dimen name="height_button">60dp</dimen>
 </resources>

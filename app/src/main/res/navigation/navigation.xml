@@ -9,6 +9,20 @@
         android:id="@+id/landingFragment"
         android:name="com.example.tvmazeclient.presentation.view.LandingFragment"
         android:label="fragment_landing"
-        tools:layout="@layout/fragment_landing" />
+        tools:layout="@layout/fragment_landing" >
+        <action
+            android:id="@+id/action_landingFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.tvmazeclient.presentation.view.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="showId"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>

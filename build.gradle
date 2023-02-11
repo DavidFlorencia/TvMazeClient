@@ -17,6 +17,9 @@ buildscript {
         loggingInterceptorVersion = '4.10.0'
         glideVersion = '4.12.0'
     }
+    dependencies {
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion")
+    }
 }
 
 plugins {

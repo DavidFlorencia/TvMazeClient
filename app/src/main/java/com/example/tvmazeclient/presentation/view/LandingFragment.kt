@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isGone
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tvmazeclient.R
 import com.example.tvmazeclient.data.model.ScheduleResponse
@@ -65,6 +66,9 @@ class LandingFragment : Fragment() {
                     val adapter = ScheduleAdapter()
                     binding.rvShows.adapter = adapter
                     adapter.differ.submitList(filtered)
+                    adapter.setOnItemClickListener {
+                        nextScreen(it.showInfo.id)
+                    }
                 }
                 is Resource.Error -> {
                     showErrorScreen()
@@ -96,6 +100,9 @@ class LandingFragment : Fragment() {
                     val adapter = QueryAdapter()
                     binding.rvShows.adapter = adapter
                     adapter.differ.submitList(response.data)
+                    adapter.setOnItemClickListener {
+                        nextScreen(it.show.id)
+                    }
                 }
                 is Resource.Error -> {
                     showErrorScreen()
@@ -116,6 +123,12 @@ class LandingFragment : Fragment() {
         }
 
         initRecyclerView()
+    }
+
+    private fun nextScreen(showId: Int) {
+        findNavController().navigate(
+            LandingFragmentDirections.actionLandingFragmentToDetailFragment(showId)
+        )
     }
 
     private fun showProgressBar() {
@@ -144,20 +157,5 @@ class LandingFragment : Fragment() {
     override fun onResume() {
         activity?.title = viewModel.getStringDate()
         super.onResume()
-    }
-
-    /**
-     * función utilizada para filtrar lista de objetos a tráves de
-     * alguna de sus propiedades
-     */
-    private inline fun <T, K> Iterable<T>.distinctBy(selector: (T) -> K): List<T> {
-        val set = HashSet<K>()
-        val list = ArrayList<T>()
-        for (e in this) {
-            val key = selector(e)
-            if (set.add(key))
-                list.add(e)
-        }
-        return list
     }
 }
