@@ -6,8 +6,10 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import androidx.lifecycle.*
+import com.example.tvmazeclient.data.model.QueryResponse
 import com.example.tvmazeclient.data.model.ScheduleResponse
 import com.example.tvmazeclient.data.util.Resource
+import com.example.tvmazeclient.domain.usecase.GetShowsByQueryUseCase
 import com.example.tvmazeclient.domain.usecase.GetShowsScheduleUseCase
 import kotlinx.coroutines.launch
 import java.lang.Exception
@@ -16,7 +18,8 @@ import java.util.*
 
 class LandingViewModel(
     private val app: Application,
-    private val getShowsScheduleUseCase: GetShowsScheduleUseCase
+    private val getShowsScheduleUseCase: GetShowsScheduleUseCase,
+    private val getShowsByQueryUseCase: GetShowsByQueryUseCase,
 ) : AndroidViewModel(app){
     /**
      * variables para lógica de consumo en pantalla inicial
@@ -68,6 +71,25 @@ class LandingViewModel(
             }
         }catch(e: Exception){
             _currentShows.postValue(Resource.Error(e.message.toString()))
+        }
+    }
+
+    private val _queryShows = MutableLiveData<Resource<QueryResponse>>()
+    val queryShows: LiveData<Resource<QueryResponse>>
+        get() = _queryShows
+    fun getShowsByQuery(query: String) = viewModelScope.launch {
+        _queryShows.postValue(Resource.Loading())
+        try {
+            if (isNetworkAvailable(app)) {
+                val response = getShowsByQueryUseCase.execute(
+                    query
+                )
+                _queryShows.postValue(response)
+            } else {
+                _queryShows.postValue(Resource.Error("No internet connection"))
+            }
+        }catch(e: Exception){
+            _queryShows.postValue(Resource.Error(e.message.toString()))
         }
     }
 

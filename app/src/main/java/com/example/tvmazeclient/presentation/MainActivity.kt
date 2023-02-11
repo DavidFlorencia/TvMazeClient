@@ -1,9 +1,10 @@
 package com.example.tvmazeclient.presentation
 
 import android.content.pm.ActivityInfo
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import com.example.tvmazeclient.R
@@ -42,9 +43,9 @@ class MainActivity : AppCompatActivity() {
 
         searchView?.queryHint = "Buscar programa"
 
-        //TODO "Implementar funcionamiento de listener"
         searchView?.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
+                viewModel.getShowsByQuery(query.toString())
                 return false
             }
 
@@ -52,6 +53,22 @@ class MainActivity : AppCompatActivity() {
                 return false
             }
         })
+
+        menu.findItem(R.id.action_search).setOnActionExpandListener(
+            object: MenuItem.OnActionExpandListener{
+                override fun onMenuItemActionExpand(p0: MenuItem): Boolean {
+                    return true
+                }
+
+                override fun onMenuItemActionCollapse(p0: MenuItem): Boolean {
+                    viewModel.apply {
+                        getShowsSchedule(dateIso8601.value.toString())
+                    }
+                    return true
+                }
+
+            }
+        )
 
         return super.onCreateOptionsMenu(menu)
     }

@@ -9,8 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.tvmazeclient.data.model.ScheduleResponse.Show
 import com.example.tvmazeclient.databinding.ItemShowBinding
 
-class ShowsAdapter: RecyclerView.Adapter<ShowsAdapter.ShowsViewHolder>() {
-    private var searchActive: Boolean = false
+class ScheduleAdapter: RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>() {
     private var onItemClickListener :((Show)->Unit)? = null
 
     /**
@@ -27,13 +26,13 @@ class ShowsAdapter: RecyclerView.Adapter<ShowsAdapter.ShowsViewHolder>() {
         }
     })
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShowsViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScheduleViewHolder {
         val binding = ItemShowBinding
             .inflate(LayoutInflater.from(parent.context),parent,false)
-        return ShowsViewHolder(binding)
+        return ScheduleViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ShowsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ScheduleViewHolder, position: Int) {
         val show = differ.currentList[position]
         holder.bind(show)
     }
@@ -42,16 +41,13 @@ class ShowsAdapter: RecyclerView.Adapter<ShowsAdapter.ShowsViewHolder>() {
         return differ.currentList.size
     }
 
-    inner class ShowsViewHolder(private val binding: ItemShowBinding):
+    inner class ScheduleViewHolder(private val binding: ItemShowBinding):
             RecyclerView.ViewHolder(binding.root){
                 fun bind(show: Show){
+
                     binding.txtName.text = show.showInfo.name
                     binding.txtNetworkName.text = show.showInfo.network?.name
-                    binding.txtAirDateTime.text = if (searchActive) {
-                        "time | days"
-                    }else{
-                        "${show.airdate} | ${show.airtime}"
-                    }
+                    binding.txtAirDateTime.text = "${show.airdate} | ${show.airtime}"
 
                     Glide.with(binding.ivShowImage.context)
                         .load(show.showInfo.image.medium)
@@ -67,10 +63,6 @@ class ShowsAdapter: RecyclerView.Adapter<ShowsAdapter.ShowsViewHolder>() {
 
     fun setOnItemClickListener(listener : (Show)->Unit){
         onItemClickListener = listener
-    }
-
-    fun setSearchActive(boolean: Boolean){
-        searchActive = boolean
     }
 }
 
