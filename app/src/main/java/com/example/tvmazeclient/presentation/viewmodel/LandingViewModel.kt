@@ -1,16 +1,13 @@
 package com.example.tvmazeclient.presentation.viewmodel
 
 import android.app.Application
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.os.Build
 import androidx.lifecycle.*
 import com.example.tvmazeclient.data.model.QueryResponse
 import com.example.tvmazeclient.data.model.ScheduleResponse
 import com.example.tvmazeclient.data.util.Resource
 import com.example.tvmazeclient.domain.usecase.GetShowsByQueryUseCase
 import com.example.tvmazeclient.domain.usecase.GetShowsScheduleUseCase
+import com.example.tvmazeclient.presentation.isNetworkAvailable
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import java.text.SimpleDateFormat
@@ -48,7 +45,7 @@ class LandingViewModel(
             ).format(Date())
 
     /**
-     * liva data que contiene lista de shows
+     * liva data que contiene lista de shows del día
      */
     private val _currentShows = MutableLiveData<Resource<ScheduleResponse>>()
     val currentShows: LiveData<Resource<ScheduleResponse>>
@@ -74,9 +71,16 @@ class LandingViewModel(
         }
     }
 
+    /**
+     * liva data que contiene lista de shows buscados
+     */
     private val _queryShows = MutableLiveData<Resource<QueryResponse>>()
     val queryShows: LiveData<Resource<QueryResponse>>
         get() = _queryShows
+
+    /**
+     * función que invoca el caso de uso para buscar shows por query
+     */
     fun getShowsByQuery(query: String) = viewModelScope.launch {
         _queryShows.postValue(Resource.Loading())
         try {
@@ -91,35 +95,5 @@ class LandingViewModel(
         }catch(e: Exception){
             _queryShows.postValue(Resource.Error(e.message.toString()))
         }
-    }
-
-    /**
-     * función que valida si estamos conectados a internet
-     */
-    private fun isNetworkAvailable(context: Context?):Boolean{
-        if (context == null) return false
-        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            val capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
-            if (capabilities != null) {
-                when {
-                    capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> {
-                        return true
-                    }
-                    capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> {
-                        return true
-                    }
-                    capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> {
-                        return true
-                    }
-                }
-            }
-        } else {
-            val activeNetworkInfo = connectivityManager.activeNetworkInfo
-            if (activeNetworkInfo != null && activeNetworkInfo.isConnected) {
-                return true
-            }
-        }
-        return false
     }
 }

@@ -1,6 +1,8 @@
 package com.example.tvmazeclient.presentation.di
 
 import com.example.tvmazeclient.domain.ShowsRepository
+import com.example.tvmazeclient.domain.usecase.GetCastByIdUseCase
+import com.example.tvmazeclient.domain.usecase.GetShowByIdUseCase
 import com.example.tvmazeclient.domain.usecase.GetShowsByQueryUseCase
 import com.example.tvmazeclient.domain.usecase.GetShowsScheduleUseCase
 import dagger.Module
@@ -25,6 +27,18 @@ class UseCaseModule {
     @Provides
     fun provideGetShowsByQueryUseCase(showsRepository: ShowsRepository): GetShowsByQueryUseCase{
         return GetShowsByQueryUseCase(showsRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun provideGetShowByIdUseCase(showsRepository: ShowsRepository): GetShowByIdUseCase{
+        return GetShowByIdUseCase(showsRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun provideGetCasyByIdUseCase(showsRepository: ShowsRepository): GetCastByIdUseCase{
+        return GetCastByIdUseCase(showsRepository)
     }
 
 }

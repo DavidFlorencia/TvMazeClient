@@ -13,6 +13,7 @@
     <dimen name="font_size_button">18sp</dimen>
 
     <dimen name="status_size">200dp</dimen>
+    <dimen name="status_size_detail">300dp</dimen>
     <dimen name="margin_vertical_detail_fragment">20dp</dimen>
     <dimen name="margin_horizontal_detail_fragment">20dp</dimen>
     <dimen name="width_button">180dp</dimen>

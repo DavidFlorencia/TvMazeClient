@@ -117,7 +117,6 @@ class LandingFragment : Fragment() {
                 }
                 is Resource.Loading -> {
                     showProgressBar()
-                    binding.ivProgressBar.isGone = false
                 }
             }
         }

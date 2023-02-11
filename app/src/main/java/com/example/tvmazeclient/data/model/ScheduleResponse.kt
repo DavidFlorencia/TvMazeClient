@@ -34,9 +34,4 @@ class ScheduleResponse : ArrayList<ScheduleResponse.Show>(){
         @SerializedName("name")
         val name: String
     )
-
-    data class Image(
-        @SerializedName("medium")
-        val medium: String,
-    )
 }

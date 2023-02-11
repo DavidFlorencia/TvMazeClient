@@ -1,7 +1,9 @@
 package com.example.tvmazeclient.data.repository
 
+import com.example.tvmazeclient.data.model.CastResponse
 import com.example.tvmazeclient.data.model.QueryResponse
 import com.example.tvmazeclient.data.model.ScheduleResponse
+import com.example.tvmazeclient.data.model.ShowResponse
 import com.example.tvmazeclient.data.repository.dataSource.ShowsRemoteDataSource
 import com.example.tvmazeclient.data.util.Resource
 import com.example.tvmazeclient.domain.ShowsRepository
@@ -22,6 +24,14 @@ class ShowsRepositoryImpl(
      */
     override suspend fun getShowsByQuery(query: String): Resource<QueryResponse> {
         return responseToResource(showsRemoteDataSource.getShowsByQuery(query))
+    }
+
+    override suspend fun getShowById(id: String): Resource<ShowResponse> {
+        return responseToResource(showsRemoteDataSource.getShowById(id))
+    }
+
+    override suspend fun getCastById(id: String): Resource<CastResponse> {
+        return responseToResource(showsRemoteDataSource.getCastById(id))
     }
 
     /**

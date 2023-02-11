@@ -35,9 +35,4 @@ class QueryResponse : ArrayList<QueryResponse.ResponseItem>(){
         @SerializedName("time")
         val time: String?
     )
-
-    data class Image(
-        @SerializedName("medium")
-        val medium: String
-    )
 }
