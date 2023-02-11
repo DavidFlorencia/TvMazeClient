@@ -6,4 +6,6 @@
 
     <dimen name="item_list_title_size">16sp</dimen>
     <dimen name="item_list_secondary_size">14sp</dimen>
+    <dimen name="status_size">200dp</dimen>
+    <bool name="portrait_only">true</bool>
 </resources>

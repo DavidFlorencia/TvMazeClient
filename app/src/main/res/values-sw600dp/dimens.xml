@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <dimen name="item_list_title_size">18sp</dimen>
     <dimen name="item_list_secondary_size">16sp</dimen>
+    <bool name="portrait_only">false</bool>
 </resources>

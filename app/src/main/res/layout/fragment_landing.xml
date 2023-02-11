@@ -2,11 +2,28 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".presentation.view.LandingFragment">
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_shows"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:itemCount="10"
-        tools:listitem="@layout/item_show"
-        android:background="@color/gray"/>
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/ivProgressBar"
+            android:layout_width="@dimen/status_size"
+            android:layout_height="@dimen/status_size"
+            android:src="@drawable/loading_animation"
+            android:contentDescription="@string/loader_network_error"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_shows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="10"
+            tools:listitem="@layout/item_show"
+            android:background="@color/gray"/>
+
+    </LinearLayout>
 </layout>

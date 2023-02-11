@@ -10,6 +10,7 @@ import com.example.tvmazeclient.data.model.ScheduleResponse.Show
 import com.example.tvmazeclient.databinding.ItemShowBinding
 
 class ShowsAdapter: RecyclerView.Adapter<ShowsAdapter.ShowsViewHolder>() {
+    private var searchActive: Boolean = false
     private var onItemClickListener :((Show)->Unit)? = null
 
     /**
@@ -46,7 +47,11 @@ class ShowsAdapter: RecyclerView.Adapter<ShowsAdapter.ShowsViewHolder>() {
                 fun bind(show: Show){
                     binding.txtName.text = show.showInfo.name
                     binding.txtNetworkName.text = show.showInfo.network?.name
-                    binding.txtAirDateTime.text = "${show.airdate} | ${show.airtime}"
+                    binding.txtAirDateTime.text = if (searchActive) {
+                        "time | days"
+                    }else{
+                        "${show.airdate} | ${show.airtime}"
+                    }
 
                     Glide.with(binding.ivShowImage.context)
                         .load(show.showInfo.image.medium)
@@ -62,6 +67,10 @@ class ShowsAdapter: RecyclerView.Adapter<ShowsAdapter.ShowsViewHolder>() {
 
     fun setOnItemClickListener(listener : (Show)->Unit){
         onItemClickListener = listener
+    }
+
+    fun setSearchActive(boolean: Boolean){
+        searchActive = boolean
     }
 }
 
