@@ -83,6 +83,7 @@
                 app:layout_constraintBottom_toBottomOf="parent">
 
                 <TextView
+                    android:visibility="gone"
                     android:text="@string/detail_schedule"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -93,7 +94,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/detail_section_body"
-                    tools:text="00:37 | Monday, Tuesday, Wednesday, Thursday, Friday" />
+                    tools:text="00:37 | Monday, Tuesday, Wednesday, Thursday, Friday"
+                    android:justificationMode="inter_word"/>
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -152,29 +154,38 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_network_name" />
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_height="0dp"
                 app:layout_constraintBottom_toTopOf="@id/rv_cast"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_go_site">
+                app:layout_constraintTop_toBottomOf="@id/btn_go_site"
+                android:layout_marginVertical="@dimen/margin_vertical_detail_fragment_text">
 
-                <TextView
-                    style="@style/detail_section_title"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/detail_resume" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tv_resume"
-                    style="@style/detail_section_body"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:text="Esta es la sinópsis del show." />
+                    <TextView
+                        style="@style/detail_section_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/detail_resume" />
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_resume"
+                        style="@style/detail_section_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Esta es la sinópsis del show."
+                        android:justificationMode="inter_word"
+                        android:paddingEnd="@dimen/margin_between_image_text"/>
+
+                </LinearLayout>
+
+            </ScrollView>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_cast"

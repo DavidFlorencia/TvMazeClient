@@ -125,7 +125,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/detail_section_body"
-                        tools:text="Esta es la sinópsis del show." />
+                        tools:text="Esta es la sinópsis del show."
+                        android:justificationMode="inter_word"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -155,6 +156,7 @@
                         android:layout_marginTop="@dimen/margin_vertical_detail_fragment">
 
                         <TextView
+                            android:visibility="gone"
                             android:text="@string/detail_schedule"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -165,7 +167,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             style="@style/detail_section_body"
-                            tools:text="00:37 | Monday, Tuesday, Wednesday, Thursday, Friday" />
+                            tools:text="00:37 | Monday, Tuesday, Wednesday, Thursday, Friday"
+                            android:justificationMode="inter_word"/>
                     </LinearLayout>
 
                     <TextView
@@ -185,6 +188,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/status_container"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"

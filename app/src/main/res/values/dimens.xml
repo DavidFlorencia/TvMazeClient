@@ -20,6 +20,6 @@
     <dimen name="width_button">180dp</dimen>
     <dimen name="height_button">50dp</dimen>
     <dimen name="margin_horizontal_tablet_items">5dp</dimen>
-    <dimen name="item_cast_width">120dp</dimen>
+    <dimen name="item_cast_width">100dp</dimen>
     <bool name="portrait_only">true</bool>
 </resources>

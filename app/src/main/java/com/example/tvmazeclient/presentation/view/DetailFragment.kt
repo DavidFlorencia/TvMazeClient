@@ -81,7 +81,10 @@ class DetailFragment : Fragment() {
                         binding.tvGenders.text = show.genres
                             .joinToString(", ")
                         val days = show.schedule.days.joinToString(", ")
-                        binding.tvSchedule.text = "${show.schedule.time} | $days"
+
+                        binding.tvSchedule.text = Html.fromHtml(
+                            "<p><b>${getString(R.string.detail_schedule)}</b>${show.schedule.time} | $days</p>",
+                            Html.FROM_HTML_MODE_COMPACT)
 
                         show.officialSite
                         show.network?.officialSite
