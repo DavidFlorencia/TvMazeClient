@@ -3,10 +3,10 @@
 [TvMazeClient.apk](/TvMazeClient.apk)
 
 Esta es una aplicación de muestra que consume los servicios web:
-* http://api.tvmaze.com/schedule?country=US&date=<today> 
-* http://api.tvmaze.com/search/shows?q=<query> 
-* http://api.tvmaze.com/shows/<id> 
-* http://api.tvmaze.com/shows/<id>/cast
+* http://api.tvmaze.com/schedule?country=US&date='today' 
+* http://api.tvmaze.com/search/shows?q='query' 
+* http://api.tvmaze.com/shows/'id' 
+* http://api.tvmaze.com/shows/'id'/cast
 
 Esta desarrollada con la arquitectura de software MVVM + Clean: se divide en 3 capas presentación,
 dominio y data; que a su vez cuentan con las subcapas modelo, vista y modelo de vista. 
