@@ -6,6 +6,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.tvmazeclient.domain.usecase.GetShowsByQueryUseCase
 import com.example.tvmazeclient.domain.usecase.GetShowsScheduleUseCase
 
+/**
+ * factory para landingViewModel
+ */
 class LandingViewModelFactory(
     private val app: Application,
     private val getShowsScheduleUseCase: GetShowsScheduleUseCase,

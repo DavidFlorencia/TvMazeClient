@@ -43,6 +43,9 @@ class MainActivity : AppCompatActivity() {
 
         searchView?.queryHint = "Buscar programa"
 
+        /**
+         * se implementa listener que se detona al presionar en buscar
+         */
         searchView?.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 viewModel.getShowsByQuery(query.toString())
@@ -54,6 +57,9 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        /**
+         * se implementa listener que se detona al cerrar caja de busqueda
+         */
         menu.findItem(R.id.action_search).setOnActionExpandListener(
             object: MenuItem.OnActionExpandListener{
                 override fun onMenuItemActionExpand(p0: MenuItem): Boolean {

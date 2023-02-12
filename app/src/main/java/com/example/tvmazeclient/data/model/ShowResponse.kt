@@ -23,24 +23,8 @@ data class ShowResponse(
     @SerializedName("schedule")
     val schedule: Schedule,
 ){
-    data class Network(
-        @SerializedName("id")
-        val id: Int,
-        @SerializedName("name")
-        val name: String,
-        @SerializedName("officialSite")
-        val officialSite: String
-    )
-
     data class Rating(
         @SerializedName("average")
         val average: String
-    )
-
-    data class Schedule(
-        @SerializedName("days")
-        val days: List<String>,
-        @SerializedName("time")
-        val time: String
     )
 }

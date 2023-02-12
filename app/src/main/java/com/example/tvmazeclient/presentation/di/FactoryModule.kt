@@ -13,6 +13,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+/**
+ * modulo para inyeccion de dependencias de view model factory
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 class FactoryModule {

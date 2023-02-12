@@ -6,6 +6,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.tvmazeclient.domain.usecase.GetCastByIdUseCase
 import com.example.tvmazeclient.domain.usecase.GetShowByIdUseCase
 
+/**
+ * factory para detailViewModel
+ */
 class DetailViewModelFactory(
     private val app: Application,
     private val getShowByIdUseCase: GetShowByIdUseCase,

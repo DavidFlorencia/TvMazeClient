@@ -27,11 +27,4 @@ class ScheduleResponse : ArrayList<ScheduleResponse.Show>(){
         @SerializedName("network")
         val network: Network?,
     )
-
-    data class Network(
-        @SerializedName("id")
-        val id: Int,
-        @SerializedName("name")
-        val name: String
-    )
 }
