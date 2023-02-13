@@ -21,6 +21,7 @@ buildscript {
         googleTruthVersion = '1.1'
         coreTestingVersion = '2.1.0'
         mockitoVersion = '3.8.0'
+        coroutinesVersion = '1.6.4'
     }
     dependencies {
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion")
