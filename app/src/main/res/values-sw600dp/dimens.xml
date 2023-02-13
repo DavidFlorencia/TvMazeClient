@@ -10,5 +10,5 @@
 
     <bool name="portrait_only">false</bool>
     <dimen name="width_button">200dp</dimen>
-    <dimen name="height_button">60dp</dimen>
+    <dimen name="height_button">50dp</dimen>
 </resources>

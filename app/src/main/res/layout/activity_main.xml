@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".presentation.MainActivity">
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -14,7 +15,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:navGraph="@navigation/navigation"
-            app:defaultNavHost="true"/>
+            app:defaultNavHost="true"
+            android:layout_weight="1"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bnv_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/teal_700"
+            app:itemTextColor="@color/white"
+            app:itemIconTint="@color/white"
+            app:menu="@menu/bottom_menu"/>
 
     </LinearLayout>
 </layout>

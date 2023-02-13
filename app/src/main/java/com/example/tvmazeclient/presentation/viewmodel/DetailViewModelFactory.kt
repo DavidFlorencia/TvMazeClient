@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.tvmazeclient.domain.usecase.GetCastByIdUseCase
 import com.example.tvmazeclient.domain.usecase.GetShowByIdUseCase
+import com.example.tvmazeclient.domain.usecase.SaveShowUseCase
 import com.example.tvmazeclient.presentation.Utils
 
 /**
@@ -14,6 +15,7 @@ class DetailViewModelFactory(
     private val app: Application,
     private val getShowByIdUseCase: GetShowByIdUseCase,
     private val getCastByIdUseCase: GetCastByIdUseCase,
+    private val saveShowUseCase: SaveShowUseCase,
     private val utils: Utils
 ): ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -21,6 +23,7 @@ class DetailViewModelFactory(
             app,
             getShowByIdUseCase,
             getCastByIdUseCase,
+            saveShowUseCase,
             utils
         ) as T
     }

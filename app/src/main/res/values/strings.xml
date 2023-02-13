@@ -8,5 +8,9 @@
     <string name="detail_gender">Géneros:&#160;</string>
     <string name="detail_schedule">Horario:&#160;</string>
     <string name="detail_cast">Talentos:</string>
-    <string name="go_site">Visitar sitio</string>
+    <string name="go_site">Go website</string>
+    <string name="schedule">Schedule</string>
+    <string name="saved_shows">Saved Shows</string>
+    <string name="save">Save</string>
+    <string name="no_save_data">Aún no tienes elementos guardados</string>
 </resources>

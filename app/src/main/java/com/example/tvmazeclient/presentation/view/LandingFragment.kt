@@ -77,7 +77,7 @@ class LandingFragment : Fragment() {
                             .make(
                                 binding.root,
                             "An error occurred : $it",
-                                Snackbar.LENGTH_LONG)
+                                Snackbar.LENGTH_SHORT)
                             .show()
                     }
                 }
@@ -111,7 +111,7 @@ class LandingFragment : Fragment() {
                             .make(
                                 binding.root,
                                 "An error occurred : $it",
-                                Snackbar.LENGTH_LONG)
+                                Snackbar.LENGTH_SHORT)
                             .show()
                     }
                 }

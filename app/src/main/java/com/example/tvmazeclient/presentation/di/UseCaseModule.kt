@@ -1,10 +1,7 @@
 package com.example.tvmazeclient.presentation.di
 
 import com.example.tvmazeclient.domain.ShowsRepository
-import com.example.tvmazeclient.domain.usecase.GetCastByIdUseCase
-import com.example.tvmazeclient.domain.usecase.GetShowByIdUseCase
-import com.example.tvmazeclient.domain.usecase.GetShowsByQueryUseCase
-import com.example.tvmazeclient.domain.usecase.GetShowsScheduleUseCase
+import com.example.tvmazeclient.domain.usecase.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -41,4 +38,33 @@ class UseCaseModule {
         return GetCastByIdUseCase(showsRepository)
     }
 
+    @Singleton
+    @Provides
+    fun provideDeleteShowUseCase(showsRepository: ShowsRepository): DeleteShowUseCase {
+        return DeleteShowUseCase(showsRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun provideGetSavedCastByIdUseCase(showsRepository: ShowsRepository): GetSavedCastByIdUseCase {
+        return GetSavedCastByIdUseCase(showsRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun provideGetSavedShowByIdUseCase(showsRepository: ShowsRepository): GetSavedShowByIdUseCase {
+        return GetSavedShowByIdUseCase(showsRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun provideGetSavedShowsUseCase(showsRepository: ShowsRepository): GetSavedShowsUseCase {
+        return GetSavedShowsUseCase(showsRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun provideSaveShowUseCase(showsRepository: ShowsRepository): SaveShowUseCase {
+        return SaveShowUseCase(showsRepository)
+    }
 }

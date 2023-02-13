@@ -21,5 +21,7 @@
     <dimen name="height_button">50dp</dimen>
     <dimen name="margin_horizontal_tablet_items">5dp</dimen>
     <dimen name="item_cast_width">100dp</dimen>
+    <dimen name="no_save_data_height">300dp</dimen>
+    <dimen name="no_save_data_font_size">24sp</dimen>
     <bool name="portrait_only">true</bool>
 </resources>

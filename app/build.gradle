@@ -78,6 +78,8 @@ dependencies {
      * dependencia para inyeccion de dependencias
      */
     implementation "com.google.dagger:hilt-android:$hiltVersion"
+    implementation 'androidx.test.ext:junit-ktx:1.1.5'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
 
     /**
@@ -101,4 +103,14 @@ dependencies {
     testImplementation "org.mockito:mockito-core:$mockitoVersion"
     testImplementation "org.mockito:mockito-inline:$mockitoInlineVersion"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
+
+    // dependencias para persistencia de datos
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

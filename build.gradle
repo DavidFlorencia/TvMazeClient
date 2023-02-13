@@ -23,6 +23,7 @@ buildscript {
         mockitoVersion = '3.8.0'
         coroutinesVersion = '1.6.4'
         mockitoInlineVersion = '2.13.0'
+        roomVersion = '2.5.0'
     }
     dependencies {
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion")

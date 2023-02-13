@@ -7,6 +7,9 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.tvmazeclient.R
 import com.example.tvmazeclient.databinding.ActivityMainBinding
 import com.example.tvmazeclient.presentation.viewmodel.LandingViewModel
@@ -19,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var factory: LandingViewModelFactory
     lateinit var viewModel: LandingViewModel
-    private lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -29,7 +32,19 @@ class MainActivity : AppCompatActivity() {
             requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         }
 
+        setUpBottomMenu()
+
         setContentView(binding.root)
+    }
+
+    private fun setUpBottomMenu() {
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.navHostFragment) as NavHostFragment
+        val navController = navHostFragment.navController
+
+        binding.bnvNews.setupWithNavController(
+            navController
+        )
     }
 
     /**
@@ -48,6 +63,7 @@ class MainActivity : AppCompatActivity() {
          */
         searchView?.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
+                binding.bnvNews.selectedItemId = R.id.landingFragment
                 viewModel.getShowsByQuery(query.toString())
                 return false
             }
@@ -63,6 +79,7 @@ class MainActivity : AppCompatActivity() {
         menu.findItem(R.id.action_search).setOnActionExpandListener(
             object: MenuItem.OnActionExpandListener{
                 override fun onMenuItemActionExpand(p0: MenuItem): Boolean {
+                    binding.bnvNews.selectedItemId = R.id.landingFragment
                     return true
                 }
 

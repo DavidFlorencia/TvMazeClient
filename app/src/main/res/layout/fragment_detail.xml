@@ -91,7 +91,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1.5"
-                            android:gravity="center">
+                            android:gravity="center"
+                            android:orientation="vertical">
 
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/btn_go_site"
@@ -99,6 +100,13 @@
                                 android:layout_height="@dimen/height_button"
                                 android:textSize="@dimen/font_size_button"
                                 android:text="@string/go_site"/>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_save"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/height_button"
+                                android:textSize="@dimen/font_size_button"
+                                android:text="@string/save"/>
 
                         </LinearLayout>
 

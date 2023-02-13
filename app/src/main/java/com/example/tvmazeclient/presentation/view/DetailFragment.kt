@@ -7,6 +7,8 @@ import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
@@ -17,7 +19,9 @@ import com.example.tvmazeclient.R
 import com.example.tvmazeclient.data.model.CastResponse
 import com.example.tvmazeclient.data.util.Resource
 import com.example.tvmazeclient.databinding.FragmentDetailBinding
+import com.example.tvmazeclient.presentation.MainActivity
 import com.example.tvmazeclient.presentation.adapter.PersonAdapter
+import com.example.tvmazeclient.presentation.viewmodel.DetailSavedViewModelFactory
 import com.example.tvmazeclient.presentation.viewmodel.DetailViewModel
 import com.example.tvmazeclient.presentation.viewmodel.DetailViewModelFactory
 import com.google.android.material.snackbar.Snackbar
@@ -57,6 +61,21 @@ class DetailFragment : Fragment() {
     }
 
     private fun attachObservers() {
+        binding.btnSave?.setOnClickListener {
+            viewModel.saveShow()
+        }
+
+        viewModel.saved.observe(viewLifecycleOwner){ saved ->
+            if (saved){
+                Snackbar
+                    .make(
+                        binding.root,
+                        "Show saved",
+                        Snackbar.LENGTH_SHORT)
+                    .show()
+            }
+        }
+
         /**
          * observador que se detona al finalizar el consumo del
          * servicio web busqueda de show por id, valida la respuesta
@@ -106,7 +125,7 @@ class DetailFragment : Fragment() {
                                     .make(
                                         binding.root,
                                         "No data",
-                                        Snackbar.LENGTH_LONG)
+                                        Snackbar.LENGTH_SHORT)
                                     .show()
                             }
                         }
@@ -181,6 +200,11 @@ class DetailFragment : Fragment() {
      */
     override fun onResume() {
         super.onResume()
+        (activity as MainActivity?)?.binding?.bnvNews?.apply {
+            val slideDown: Animation = AnimationUtils.loadAnimation(context, R.anim.slide_down)
+            this.isGone = true
+            this.startAnimation(slideDown)
+        }
         (activity as AppCompatActivity?)?.supportActionBar?.hide()
     }
 
@@ -190,5 +214,6 @@ class DetailFragment : Fragment() {
     override fun onStop() {
         super.onStop()
         (activity as AppCompatActivity?)?.supportActionBar?.show()
+        (activity as MainActivity?)?.binding?.bnvNews?.isGone = false
     }
 }

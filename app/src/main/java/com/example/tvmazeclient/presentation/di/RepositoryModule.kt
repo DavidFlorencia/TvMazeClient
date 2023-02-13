@@ -1,6 +1,7 @@
 package com.example.tvmazeclient.presentation.di
 
 import com.example.tvmazeclient.data.repository.ShowsRepositoryImpl
+import com.example.tvmazeclient.data.repository.dataSource.ShowsLocalDataSource
 import com.example.tvmazeclient.data.repository.dataSource.ShowsRemoteDataSource
 import com.example.tvmazeclient.domain.ShowsRepository
 import dagger.Module
@@ -19,8 +20,12 @@ class RepositoryModule {
     @Singleton
     @Provides
     fun provideShowsRepository(
-        showsRemoteDataSource: ShowsRemoteDataSource
+        showsRemoteDataSource: ShowsRemoteDataSource,
+        showsLocalDataSource: ShowsLocalDataSource
     ): ShowsRepository{
-        return ShowsRepositoryImpl(showsRemoteDataSource)
+        return ShowsRepositoryImpl(
+            showsRemoteDataSource,
+            showsLocalDataSource
+        )
     }
 }

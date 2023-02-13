@@ -16,6 +16,16 @@
     </fragment>
 
     <fragment
+        android:id="@+id/savedFragment"
+        android:name="com.example.tvmazeclient.presentation.view.SavedFragment"
+        android:label="fragment_saved"
+        tools:layout="@layout/fragment_saved" >
+        <action
+            android:id="@+id/action_savedFragment_to_detailSavedFragment"
+            app:destination="@id/detailSavedFragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.tvmazeclient.presentation.view.DetailFragment"
         android:label="DetailFragment"
@@ -23,6 +33,16 @@
         <argument
             android:name="showId"
             app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailSavedFragment"
+        android:name="com.example.tvmazeclient.presentation.view.DetailSavedFragment"
+        android:label="fragment_detail_saved"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="showId"
+            app:argType="string" />
     </fragment>
 
 </navigation>

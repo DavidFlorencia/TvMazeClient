@@ -2,12 +2,16 @@ package com.example.tvmazeclient.presentation.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.*
+import com.example.tvmazeclient.data.db.LocalCast
+import com.example.tvmazeclient.data.db.LocalShow
 import com.example.tvmazeclient.data.model.CastResponse
 import com.example.tvmazeclient.data.model.ShowResponse
 import com.example.tvmazeclient.data.util.Resource
 import com.example.tvmazeclient.domain.usecase.GetCastByIdUseCase
 import com.example.tvmazeclient.domain.usecase.GetShowByIdUseCase
+import com.example.tvmazeclient.domain.usecase.SaveShowUseCase
 import com.example.tvmazeclient.presentation.Utils
+import com.google.gson.annotations.SerializedName
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
@@ -15,6 +19,7 @@ class DetailViewModel(
     private val app: Application,
     private val getShowByIdUseCase: GetShowByIdUseCase,
     private val getCastByIdUseCase: GetCastByIdUseCase,
+    private val saveShowUseCase: SaveShowUseCase,
     private val utils: Utils
 ) : AndroidViewModel(app){
 
@@ -67,6 +72,42 @@ class DetailViewModel(
             }
         }catch(e: Exception){
             _cast.postValue(Resource.Error(e.message.toString()))
+        }
+    }
+
+    private val _saved = MutableLiveData<Boolean>()
+    val saved: LiveData<Boolean>
+        get() = _saved
+    fun saveShow() = viewModelScope.launch {
+        infoShow.value?.data?.apply {
+            val site = officialSite ?: (network?.officialSite ?: "")
+            val showId = id.toString()
+
+            val localShow = LocalShow(
+                showId = showId,
+                name = name,
+                network = network?.name,
+                site = site,
+                resume = summary,
+                genres = genres.joinToString(", "),
+                time = schedule.time,
+                days = schedule.days.joinToString(", "),
+                image = image?.medium,
+                rating = rating.average
+            )
+
+            cast.value?.data.apply {
+                val cast = this?.map { person ->
+                    LocalCast(
+                        showId = showId,
+                        name = person.data.name,
+                        image = person.data.image?.medium
+                    )
+                }
+                saveShowUseCase.execute(localShow,cast ?: listOf())
+                _saved.postValue(true)
+            }
+
         }
     }
 }

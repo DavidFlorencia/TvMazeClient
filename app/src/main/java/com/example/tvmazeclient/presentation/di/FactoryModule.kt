@@ -1,13 +1,12 @@
 package com.example.tvmazeclient.presentation.di
 
 import android.app.Application
-import com.example.tvmazeclient.domain.usecase.GetCastByIdUseCase
-import com.example.tvmazeclient.domain.usecase.GetShowByIdUseCase
-import com.example.tvmazeclient.domain.usecase.GetShowsByQueryUseCase
-import com.example.tvmazeclient.domain.usecase.GetShowsScheduleUseCase
+import com.example.tvmazeclient.domain.usecase.*
 import com.example.tvmazeclient.presentation.Utils
+import com.example.tvmazeclient.presentation.viewmodel.DetailSavedViewModelFactory
 import com.example.tvmazeclient.presentation.viewmodel.DetailViewModelFactory
 import com.example.tvmazeclient.presentation.viewmodel.LandingViewModelFactory
+import com.example.tvmazeclient.presentation.viewmodel.SavedViewModelFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -47,13 +46,39 @@ class FactoryModule {
         app: Application,
         getShowByIdUseCas: GetShowByIdUseCase,
         getCastByIdUseCase: GetCastByIdUseCase,
+        saveShowUseCase: SaveShowUseCase,
         utils: Utils
     ): DetailViewModelFactory{
         return DetailViewModelFactory(
             app,
             getShowByIdUseCas,
             getCastByIdUseCase,
+            saveShowUseCase,
             utils
+        )
+    }
+
+    @Singleton
+    @Provides
+    fun provideSavedViewModelFactory(
+        getSavedShowUseCase: GetSavedShowsUseCase
+    ): SavedViewModelFactory {
+        return SavedViewModelFactory(
+            getSavedShowUseCase
+        )
+    }
+
+    @Singleton
+    @Provides
+    fun provideDetailSavedViewModelFactory(
+        getSavedShowByIdUseCase: GetSavedShowByIdUseCase,
+        getSavedCastByIdUseCase: GetSavedCastByIdUseCase,
+        deleteShowUseCase: DeleteShowUseCase
+    ): DetailSavedViewModelFactory {
+        return DetailSavedViewModelFactory(
+            getSavedShowByIdUseCase,
+            getSavedCastByIdUseCase,
+            deleteShowUseCase
         )
     }
 }

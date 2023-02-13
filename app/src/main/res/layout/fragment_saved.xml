@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.view.SavedFragment"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
+            android:id="@+id/rvSavedShows"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray"/>
+
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="@dimen/no_save_data_height"
+            android:layout_height="wrap_content"
+            android:text="@string/no_save_data"
+            android:textColor="@color/black"
+            android:textSize="@dimen/no_save_data_font_size"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+</layout>

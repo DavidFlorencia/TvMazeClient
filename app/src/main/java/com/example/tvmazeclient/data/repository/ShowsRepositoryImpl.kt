@@ -1,16 +1,21 @@
 package com.example.tvmazeclient.data.repository
 
+import com.example.tvmazeclient.data.db.LocalCast
+import com.example.tvmazeclient.data.db.LocalShow
 import com.example.tvmazeclient.data.model.CastResponse
 import com.example.tvmazeclient.data.model.QueryResponse
 import com.example.tvmazeclient.data.model.ScheduleResponse
 import com.example.tvmazeclient.data.model.ShowResponse
+import com.example.tvmazeclient.data.repository.dataSource.ShowsLocalDataSource
 import com.example.tvmazeclient.data.repository.dataSource.ShowsRemoteDataSource
 import com.example.tvmazeclient.data.util.Resource
 import com.example.tvmazeclient.domain.ShowsRepository
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 
 class ShowsRepositoryImpl(
-    private val showsRemoteDataSource: ShowsRemoteDataSource
+    private val showsRemoteDataSource: ShowsRemoteDataSource,
+    private val showsLocalDataSource: ShowsLocalDataSource
 ): ShowsRepository {
     /**
      * metodo que consume shows del día
@@ -45,4 +50,19 @@ class ShowsRepositoryImpl(
         }
         return Resource.Error(response.message())
     }
+
+    override suspend fun saveShow(show: LocalShow, cast: List<LocalCast>) =
+        showsLocalDataSource.saveShow(show, cast)
+
+    override suspend fun deleteShow(show: LocalShow) =
+        showsLocalDataSource.deleteShow(show)
+
+    override fun getSavedShows(): Flow<List<LocalShow>> =
+        showsLocalDataSource.getSavedShows()
+
+    override fun getLocalShowById(id: String) =
+        showsLocalDataSource.getShowById(id)
+
+    override fun getLocalCastById(id: String) =
+        showsLocalDataSource.getCastById(id)
 }
