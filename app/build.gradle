@@ -99,7 +99,6 @@ dependencies {
     testImplementation "com.google.truth:truth:$googleTruthVersion"
     testImplementation "androidx.arch.core:core-testing:$coreTestingVersion"
     testImplementation "org.mockito:mockito-core:$mockitoVersion"
-    testImplementation 'org.mockito:mockito-inline:2.13.0'
+    testImplementation "org.mockito:mockito-inline:$mockitoInlineVersion"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
-    testImplementation 'androidx.test.ext:junit:1.1.4'
 }

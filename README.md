@@ -29,3 +29,4 @@ En este proyecto se utilizan las siguientes librerías:
 * Retrofit: Para la comunicación con los servicios web de TvMaze.
 * Gson: Para el formateo de los datos obtenidos del API.
 * Hilt: Para la inyección de dependencias.
+* JUnit 4, Mock Web Server, Google Truth y Mockito: Para pruebas unitarias.
