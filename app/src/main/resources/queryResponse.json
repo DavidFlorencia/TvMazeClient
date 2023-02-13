@@ -1,0 +1,583 @@
+[
+  {
+    "score": 0.7436648,
+    "show": {
+      "id": 51609,
+      "url": "https://www.tvmaze.com/shows/51609/hello",
+      "name": "Hello!",
+      "type": "Scripted",
+      "language": "Bengali",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "status": "Ended",
+      "runtime": 20,
+      "averageRuntime": 20,
+      "premiered": "2017-09-25",
+      "ended": "2021-03-05",
+      "officialSite": "https://www.hoichoi.tv/shows/watch-hello-bengali-web-series-online",
+      "schedule": {
+        "time": "",
+        "days": [
+          "Friday"
+        ]
+      },
+      "rating": {
+        "average": null
+      },
+      "weight": 4,
+      "network": null,
+      "webChannel": {
+        "id": 396,
+        "name": "Hoichoi",
+        "country": {
+          "name": "India",
+          "code": "IN",
+          "timezone": "Asia/Kolkata"
+        },
+        "officialSite": null
+      },
+      "dvdCountry": null,
+      "externals": {
+        "tvrage": null,
+        "thetvdb": 343234,
+        "imdb": "tt7560098"
+      },
+      "image": {
+        "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/280/701095.jpg",
+        "original": "https://static.tvmaze.com/uploads/images/original_untouched/280/701095.jpg"
+      },
+      "summary": "<p>The festival of Durga Puja becomes memorable for Nandita when suddenly she receives an MMS from an unknown number that turns her life upside down.</p>",
+      "updated": 1632302394,
+      "_links": {
+        "self": {
+          "href": "https://api.tvmaze.com/shows/51609"
+        },
+        "previousepisode": {
+          "href": "https://api.tvmaze.com/episodes/2017717"
+        }
+      }
+    }
+  },
+  {
+    "score": 0.6984252,
+    "show": {
+      "id": 55121,
+      "url": "https://www.tvmaze.com/shows/55121/hello-tomorrow",
+      "name": "Hello Tomorrow!",
+      "type": "Scripted",
+      "language": "English",
+      "genres": [
+        "Drama",
+        "Comedy",
+        "Science-Fiction"
+      ],
+      "status": "In Development",
+      "runtime": null,
+      "averageRuntime": null,
+      "premiered": "2023-02-17",
+      "ended": null,
+      "officialSite": "https://tv.apple.com/show/hello-tomorrow/umc.cmc.6lknbhv5dcfx8lfe8ghqmy4ma",
+      "schedule": {
+        "time": "",
+        "days": [
+          "Friday"
+        ]
+      },
+      "rating": {
+        "average": null
+      },
+      "weight": 98,
+      "network": null,
+      "webChannel": {
+        "id": 310,
+        "name": "Apple TV+",
+        "country": null,
+        "officialSite": "https://tv.apple.com/"
+      },
+      "dvdCountry": null,
+      "externals": {
+        "tvrage": null,
+        "thetvdb": 402320,
+        "imdb": "tt14596212"
+      },
+      "image": {
+        "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/442/1106692.jpg",
+        "original": "https://static.tvmaze.com/uploads/images/original_untouched/442/1106692.jpg"
+      },
+      "summary": "<p><b>Hello Tomorrow!</b> is set in a retro-future world. It centers around a group of traveling salesmen hawking lunar timeshares. </p>",
+      "updated": 1674079864,
+      "_links": {
+        "self": {
+          "href": "https://api.tvmaze.com/shows/55121"
+        },
+        "nextepisode": {
+          "href": "https://api.tvmaze.com/episodes/2445024"
+        }
+      }
+    }
+  },
+  {
+    "score": 0.6764045,
+    "show": {
+      "id": 192,
+      "url": "https://www.tvmaze.com/shows/192/hello-ladies",
+      "name": "Hello Ladies",
+      "type": "Scripted",
+      "language": "English",
+      "genres": [
+        "Comedy"
+      ],
+      "status": "Ended",
+      "runtime": 30,
+      "averageRuntime": 30,
+      "premiered": "2013-09-29",
+      "ended": "2013-11-17",
+      "officialSite": "http://www.hbo.com/hello-ladies",
+      "schedule": {
+        "time": "22:30",
+        "days": [
+          "Sunday"
+        ]
+      },
+      "rating": {
+        "average": 6.5
+      },
+      "weight": 61,
+      "network": {
+        "id": 8,
+        "name": "HBO",
+        "country": {
+          "name": "United States",
+          "code": "US",
+          "timezone": "America/New_York"
+        },
+        "officialSite": "https://www.hbo.com/"
+      },
+      "webChannel": null,
+      "dvdCountry": null,
+      "externals": {
+        "tvrage": 32368,
+        "thetvdb": 265609,
+        "imdb": "tt2378794"
+      },
+      "image": {
+        "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/1/2826.jpg",
+        "original": "https://static.tvmaze.com/uploads/images/original_untouched/1/2826.jpg"
+      },
+      "summary": "<p>Stewart is a gawky, 6' 7\" Englishman searching for the woman of his dreams in Los Angeles. Half as charming - and twice as desperate - as he thinks he is, he's obsessed with infiltrating the glamorous world of beautiful people, who won't let him in.</p>",
+      "updated": 1617568146,
+      "_links": {
+        "self": {
+          "href": "https://api.tvmaze.com/shows/192"
+        },
+        "previousepisode": {
+          "href": "https://api.tvmaze.com/episodes/13159"
+        }
+      }
+    }
+  },
+  {
+    "score": 0.66687816,
+    "show": {
+      "id": 53475,
+      "url": "https://www.tvmaze.com/shows/53475/hello-paul",
+      "name": "Hello Paul",
+      "type": "Animation",
+      "language": "English",
+      "genres": [
+        "Comedy"
+      ],
+      "status": "In Development",
+      "runtime": null,
+      "averageRuntime": null,
+      "premiered": null,
+      "ended": null,
+      "officialSite": null,
+      "schedule": {
+        "time": "",
+        "days": []
+      },
+      "rating": {
+        "average": null
+      },
+      "weight": 51,
+      "network": null,
+      "webChannel": {
+        "id": 329,
+        "name": "HBO Max",
+        "country": null,
+        "officialSite": "https://www.hbomax.com/"
+      },
+      "dvdCountry": null,
+      "externals": {
+        "tvrage": null,
+        "thetvdb": null,
+        "imdb": null
+      },
+      "image": null,
+      "summary": "<p><b>Hello Paul</b> is about a neurotic millennial cat whose intense job and freeloading mouse roommate stress him out. </p>",
+      "updated": 1612984185,
+      "_links": {
+        "self": {
+          "href": "https://api.tvmaze.com/shows/53475"
+        }
+      }
+    }
+  },
+  {
+    "score": 0.6666666,
+    "show": {
+      "id": 25899,
+      "url": "https://www.tvmaze.com/shows/25899/hello-counselor",
+      "name": "Hello Counselor",
+      "type": "Talk Show",
+      "language": "Korean",
+      "genres": [],
+      "status": "Ended",
+      "runtime": 80,
+      "averageRuntime": 80,
+      "premiered": "2010-11-22",
+      "ended": "2018-12-25",
+      "officialSite": "http://www.kbs.co.kr/2tv/enter/hello/",
+      "schedule": {
+        "time": "23:20",
+        "days": [
+          "Tuesday"
+        ]
+      },
+      "rating": {
+        "average": null
+      },
+      "weight": 29,
+      "network": {
+        "id": 262,
+        "name": "KBS1",
+        "country": {
+          "name": "Korea, Republic of",
+          "code": "KR",
+          "timezone": "Asia/Seoul"
+        },
+        "officialSite": null
+      },
+      "webChannel": null,
+      "dvdCountry": null,
+      "externals": {
+        "tvrage": null,
+        "thetvdb": 273388,
+        "imdb": "tt5457312"
+      },
+      "image": {
+        "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/101/253642.jpg",
+        "original": "https://static.tvmaze.com/uploads/images/original_untouched/101/253642.jpg"
+      },
+      "summary": "<p><b>Hello Counselor</b> is a talk show with an emphasis on people and their stories. From stories about the daily lives of regular people regardless of their age or gender to concerns that are too embarrassing to reveal! Our program will bring laughter and move your heart. The purpose of this program is to help take down communication barriers by sharing stories about life. Comedians Shin Dongyeop, Jeong Chanwu, Kim Taegyun, and Lee Yeongja are the hosts of this program with various special guests appearing on the show weekly.</p>",
+      "updated": 1647576760,
+      "_links": {
+        "self": {
+          "href": "https://api.tvmaze.com/shows/25899"
+        },
+        "previousepisode": {
+          "href": "https://api.tvmaze.com/episodes/1499991"
+        }
+      }
+    }
+  },
+  {
+    "score": 0.65748584,
+    "show": {
+      "id": 66729,
+      "url": "https://www.tvmaze.com/shows/66729/hello-there",
+      "name": "Hello There",
+      "type": "Scripted",
+      "language": "Chinese",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Romance"
+      ],
+      "status": "Ended",
+      "runtime": 40,
+      "averageRuntime": 40,
+      "premiered": "2023-01-31",
+      "ended": "2023-01-31",
+      "officialSite": "https://www.iq.com/album/hello-there-2023-cg3mrr1s31?lang=en_us",
+      "schedule": {
+        "time": "",
+        "days": [
+          "Tuesday"
+        ]
+      },
+      "rating": {
+        "average": null
+      },
+      "weight": 43,
+      "network": null,
+      "webChannel": {
+        "id": 67,
+        "name": "iQIYI",
+        "country": null,
+        "officialSite": "https://www.iq.com/"
+      },
+      "dvdCountry": null,
+      "externals": {
+        "tvrage": null,
+        "thetvdb": null,
+        "imdb": null
+      },
+      "image": {
+        "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/444/1111615.jpg",
+        "original": "https://static.tvmaze.com/uploads/images/original_untouched/444/1111615.jpg"
+      },
+      "summary": "<p>Adapted from the web novel <b>\"Zui Dao Xu Deng Jun Lai Fu\" (醉倒需等君来扶)</b> by <b>Ni Shi Yi (倪十一 )</b>.<br />This drama tells the story of the quirky and cute Tang Buyan, who is looking for a the person she's fated to be who apparently has a mole at the corner of his eye to help unravel the problem of her family's bloodline. By a coincidence, she meets the cool and elegant young master of the Xuanqi Sect, Li Chengqi, and their fates intertwine..</p>",
+      "updated": 1675460581,
+      "_links": {
+        "self": {
+          "href": "https://api.tvmaze.com/shows/66729"
+        },
+        "previousepisode": {
+          "href": "https://api.tvmaze.com/episodes/2482337"
+        }
+      }
+    }
+  },
+  {
+    "score": 0.6490755,
+    "show": {
+      "id": 14972,
+      "url": "https://www.tvmaze.com/shows/14972/hello-god",
+      "name": "Hello, God",
+      "type": "Scripted",
+      "language": "Korean",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "status": "Ended",
+      "runtime": 65,
+      "averageRuntime": 65,
+      "premiered": "2006-01-09",
+      "ended": "2006-02-28",
+      "officialSite": "http://www.kbs.co.kr/drama/hellogod/",
+      "schedule": {
+        "time": "21:55",
+        "days": [
+          "Monday",
+          "Tuesday"
+        ]
+      },
+      "rating": {
+        "average": null
+      },
+      "weight": 38,
+      "network": {
+        "id": 128,
+        "name": "KBS2",
+        "country": {
+          "name": "Korea, Republic of",
+          "code": "KR",
+          "timezone": "Asia/Seoul"
+        },
+        "officialSite": null
+      },
+      "webChannel": null,
+      "dvdCountry": null,
+      "externals": {
+        "tvrage": null,
+        "thetvdb": 282222,
+        "imdb": "tt1444834"
+      },
+      "image": {
+        "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/51/127574.jpg",
+        "original": "https://static.tvmaze.com/uploads/images/original_untouched/51/127574.jpg"
+      },
+      "summary": "<p>The story is about a bright and innocent 27 years old guy with an IQ of 65. Because of his issues he is neglected by society and frowned upon, but he tries to be optimistic and not let it bother him. Seo Eun Hye, a fumbling swindler running from the cops and who only believes money can bring her happiness, and love will bring more sadness then it's worth. One day she meets this boy and he completely changes her outlook on life.</p>",
+      "updated": 1513367862,
+      "_links": {
+        "self": {
+          "href": "https://api.tvmaze.com/shows/14972"
+        },
+        "previousepisode": {
+          "href": "https://api.tvmaze.com/episodes/681189"
+        }
+      }
+    }
+  },
+  {
+    "score": 0.64765626,
+    "show": {
+      "id": 18830,
+      "url": "https://www.tvmaze.com/shows/18830/hello-world",
+      "name": "Hello World!",
+      "type": "Reality",
+      "language": "English",
+      "genres": [
+        "Music",
+        "Nature"
+      ],
+      "status": "Ended",
+      "runtime": 30,
+      "averageRuntime": 30,
+      "premiered": "2016-07-09",
+      "ended": "2016-07-23",
+      "officialSite": "http://www.discovery.com/tv-shows/hello-world/",
+      "schedule": {
+        "time": "",
+        "days": [
+          "Saturday"
+        ]
+      },
+      "rating": {
+        "average": null
+      },
+      "weight": 37,
+      "network": {
+        "id": 66,
+        "name": "Discovery Channel",
+        "country": {
+          "name": "United States",
+          "code": "US",
+          "timezone": "America/New_York"
+        },
+        "officialSite": null
+      },
+      "webChannel": null,
+      "dvdCountry": null,
+      "externals": {
+        "tvrage": null,
+        "thetvdb": 314154,
+        "imdb": null
+      },
+      "image": {
+        "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/355/889655.jpg",
+        "original": "https://static.tvmaze.com/uploads/images/original_untouched/355/889655.jpg"
+      },
+      "summary": "<p>Presented in association with World Wildlife Fund (WWF), <b>Hello World</b>! is a six-part series taking a look at the wonders of the natural world through the eyes of some of today's most celebrated musicians. The series brings out the universal themes of the artists' music by using it as a soundtrack for the stories of animals in the wild.</p>",
+      "updated": 1631200900,
+      "_links": {
+        "self": {
+          "href": "https://api.tvmaze.com/shows/18830"
+        },
+        "previousepisode": {
+          "href": "https://api.tvmaze.com/episodes/863817"
+        }
+      }
+    }
+  },
+  {
+    "score": 0.64332247,
+    "show": {
+      "id": 64024,
+      "url": "https://www.tvmaze.com/shows/64024/hello-world",
+      "name": "Hello World",
+      "type": "Scripted",
+      "language": "Telugu",
+      "genres": [
+        "Drama"
+      ],
+      "status": "To Be Determined",
+      "runtime": null,
+      "averageRuntime": 32,
+      "premiered": "2022-08-12",
+      "ended": null,
+      "officialSite": null,
+      "schedule": {
+        "time": "12:00",
+        "days": []
+      },
+      "rating": {
+        "average": null
+      },
+      "weight": 34,
+      "network": null,
+      "webChannel": {
+        "id": 358,
+        "name": "ZEE5",
+        "country": {
+          "name": "India",
+          "code": "IN",
+          "timezone": "Asia/Kolkata"
+        },
+        "officialSite": null
+      },
+      "dvdCountry": null,
+      "externals": {
+        "tvrage": null,
+        "thetvdb": 423459,
+        "imdb": null
+      },
+      "image": {
+        "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/421/1053911.jpg",
+        "original": "https://static.tvmaze.com/uploads/images/original_untouched/421/1053911.jpg"
+      },
+      "summary": "<p>A bunch of youngsters from diverse backgrounds gets an offer letter from People. Later, they are shocked when a senior employee informs them that they will become permanent employees only if they fulfill certain conditions.</p>",
+      "updated": 1662734089,
+      "_links": {
+        "self": {
+          "href": "https://api.tvmaze.com/shows/64024"
+        },
+        "previousepisode": {
+          "href": "https://api.tvmaze.com/episodes/2390231"
+        }
+      }
+    }
+  },
+  {
+    "score": 0.64279866,
+    "show": {
+      "id": 48779,
+      "url": "https://www.tvmaze.com/shows/48779/hello-stranger",
+      "name": "Hello Stranger",
+      "type": "Scripted",
+      "language": "Tagalog",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "status": "Ended",
+      "runtime": 30,
+      "averageRuntime": 20,
+      "premiered": "2020-06-24",
+      "ended": "2020-08-19",
+      "officialSite": "https://www.youtube.com/channel/UCtI55bOVfu43CatriKvqF_w",
+      "schedule": {
+        "time": "",
+        "days": [
+          "Wednesday"
+        ]
+      },
+      "rating": {
+        "average": null
+      },
+      "weight": 34,
+      "network": null,
+      "webChannel": {
+        "id": 21,
+        "name": "YouTube",
+        "country": null,
+        "officialSite": "https://www.youtube.com"
+      },
+      "dvdCountry": null,
+      "externals": {
+        "tvrage": null,
+        "thetvdb": 384489,
+        "imdb": null
+      },
+      "image": {
+        "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/262/655350.jpg",
+        "original": "https://static.tvmaze.com/uploads/images/original_untouched/262/655350.jpg"
+      },
+      "summary": "<p>What if you meet someone who changes your life forever? This is a story about two boys who first met online as strangers who didn't seem to like each other very much but were again brought together by circumstances that would change their lives forever. When Mico organizes an online quiz night with his barkada, he is surprised when the school's popular basketball player, Xavier, joins in and insults them. Little does Mico know that this won't be the last time he'll be seeing Xavier.</p>",
+      "updated": 1641771386,
+      "_links": {
+        "self": {
+          "href": "https://api.tvmaze.com/shows/48779"
+        },
+        "previousepisode": {
+          "href": "https://api.tvmaze.com/episodes/1891702"
+        }
+      }
+    }
+  }
+]

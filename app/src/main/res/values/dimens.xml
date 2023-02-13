@@ -10,7 +10,7 @@
     <dimen name="detail_title_size">18sp</dimen>
     <dimen name="detail_subtitle_size">16sp</dimen>
     <dimen name="detail_body_size">14sp</dimen>
-    <dimen name="font_size_button">18sp</dimen>
+    <dimen name="font_size_button">16sp</dimen>
 
     <dimen name="status_size">200dp</dimen>
     <dimen name="status_size_detail">300dp</dimen>

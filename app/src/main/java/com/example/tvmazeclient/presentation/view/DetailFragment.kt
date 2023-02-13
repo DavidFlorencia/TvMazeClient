@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.tvmazeclient.R
+import com.example.tvmazeclient.data.model.CastResponse
 import com.example.tvmazeclient.data.util.Resource
 import com.example.tvmazeclient.databinding.FragmentDetailBinding
 import com.example.tvmazeclient.presentation.adapter.PersonAdapter
@@ -139,7 +140,16 @@ class DetailFragment : Fragment() {
                 is Resource.Success -> {
                     val adapter = PersonAdapter()
                     binding.rvCast.adapter = adapter
-                    adapter.differ.submitList(response.data)
+
+                    /**
+                     * se filtra respuesta dado que incluía elementos repetidos
+                     */
+                    val filtered: List<CastResponse.Person>? =
+                        response.data?.distinctBy{
+                            it.data.name
+                        }
+
+                    adapter.differ.submitList(filtered)
                 }
                 is Resource.Error -> {}
                 is Resource.Loading -> {}

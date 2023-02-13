@@ -7,7 +7,7 @@ import com.example.tvmazeclient.data.model.ShowResponse
 import com.example.tvmazeclient.data.util.Resource
 import com.example.tvmazeclient.domain.usecase.GetCastByIdUseCase
 import com.example.tvmazeclient.domain.usecase.GetShowByIdUseCase
-import com.example.tvmazeclient.presentation.isNetworkAvailable
+import com.example.tvmazeclient.presentation.Utils
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
@@ -15,7 +15,9 @@ class DetailViewModel(
     private val app: Application,
     private val getShowByIdUseCase: GetShowByIdUseCase,
     private val getCastByIdUseCase: GetCastByIdUseCase,
+    private val utils: Utils
 ) : AndroidViewModel(app){
+
     /**
      * liva data que contiene la información del show consultado
      */
@@ -29,7 +31,7 @@ class DetailViewModel(
     fun getShowById(id: String) = viewModelScope.launch {
         _infoShow.postValue(Resource.Loading())
         try {
-            if (isNetworkAvailable(app)) {
+            if (utils.isNetworkAvailable(app)) {
                 val response = getShowByIdUseCase.execute(
                     id
                 )
@@ -55,7 +57,7 @@ class DetailViewModel(
     fun getCastById(id: String) = viewModelScope.launch {
         _cast.postValue(Resource.Loading())
         try {
-            if (isNetworkAvailable(app)) {
+            if (utils.isNetworkAvailable(app)) {
                 val response = getCastByIdUseCase.execute(
                     id
                 )

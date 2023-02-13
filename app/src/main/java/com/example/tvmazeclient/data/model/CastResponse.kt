@@ -13,6 +13,6 @@ class CastResponse : ArrayList<CastResponse.Person>(){
         @SerializedName("name")
         val name: String,
         @SerializedName("image")
-        val image: Image
+        val image: Image?
     )
 }

@@ -7,17 +7,17 @@ import com.example.tvmazeclient.data.model.ScheduleResponse
 import com.example.tvmazeclient.data.util.Resource
 import com.example.tvmazeclient.domain.usecase.GetShowsByQueryUseCase
 import com.example.tvmazeclient.domain.usecase.GetShowsScheduleUseCase
-import com.example.tvmazeclient.presentation.isNetworkAvailable
+import com.example.tvmazeclient.presentation.Utils
 import kotlinx.coroutines.launch
 import java.lang.Exception
-import java.text.SimpleDateFormat
-import java.util.*
 
 class LandingViewModel(
     private val app: Application,
     private val getShowsScheduleUseCase: GetShowsScheduleUseCase,
     private val getShowsByQueryUseCase: GetShowsByQueryUseCase,
+    private val utils: Utils
 ) : AndroidViewModel(app){
+
     /**
      * variables para lógica de consumo en pantalla inicial
      * se utilza "_variable" para manejar el encapsulamiento de datos
@@ -31,18 +31,14 @@ class LandingViewModel(
      * inicialización de liveData de fecha actual
      */
     init {
-        _dateIso8601.value = SimpleDateFormat("yyyy-MM-dd")
-            .format(Date())
+        _dateIso8601.value = utils.currentDateWithIso8601Format()
     }
 
     /**
      * @return string que contiene fecha en el formato solicitado
      * para el titulo de la pantalla principal
      */
-    fun getStringDate(): String = SimpleDateFormat(
-                "EEEE dd 'de' MMMM yyyy",
-                Locale("es", "ES")
-            ).format(Date())
+    fun getStringDate(): String = utils.getStringDate()
 
     /**
      * liva data que contiene lista de shows del día
@@ -57,7 +53,7 @@ class LandingViewModel(
     fun getShowsSchedule(currentDate: String) = viewModelScope.launch {
         _currentShows.postValue(Resource.Loading())
         try {
-            if (isNetworkAvailable(app)) {
+            if (utils.isNetworkAvailable(app)) {
                 val response = getShowsScheduleUseCase.execute(
                     "US",
                     currentDate
@@ -84,7 +80,7 @@ class LandingViewModel(
     fun getShowsByQuery(query: String) = viewModelScope.launch {
         _queryShows.postValue(Resource.Loading())
         try {
-            if (isNetworkAvailable(app)) {
+            if (utils.isNetworkAvailable(app)) {
                 val response = getShowsByQueryUseCase.execute(
                     query
                 )

@@ -44,7 +44,7 @@ class PersonAdapter: RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
                 fun bind(item: Person){
                     binding.tvName.text = item.data.name
                     Glide.with(binding.ivImage.context)
-                        .load(item.data.image.medium)
+                        .load(item.data.image?.medium)
                         .into(binding.ivImage)
                 }
             }
