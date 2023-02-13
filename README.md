@@ -21,6 +21,9 @@ En MVVM la Vista transmite las acciones del usuario al Modelo de Vista, pero el 
 por ello se se usa un patrón de observador que es facilitado por las variables tipo ViewModel.
 El Modelo de Vista solicita información del Modelo, el cual solo responde y no puede realizar ningún otro tipo de acción ni sobre el Modelo de Vista ni sobre la Vista.
 
+Se agrego una nueva característica: en el detalle de show es posible guardar esa información para
+tenerla disponible sin conexión.
+
 En este proyecto se utilizan las siguientes librerías:
 
 * Navigation Graph y SafeArgs: Para la navegación y transferencia de datos entre fragments.
@@ -30,3 +33,4 @@ En este proyecto se utilizan las siguientes librerías:
 * Gson: Para el formateo de los datos obtenidos del API.
 * Hilt: Para la inyección de dependencias.
 * JUnit 4, Mock Web Server, Google Truth y Mockito: Para pruebas unitarias.
+* Room: Para persistencia de datos.
